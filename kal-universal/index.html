@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PJBL PPLG</title>
+    <link
+      rel="shortcut icon"
+      href="/kal-universal/asset/logo.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <a href="/index.html" class="kembali">< Back</a>
+    <div class="container">
+      <div class="container-master">
+        <div class="kalkulator">
+          <h1>Kalkulator Universal</h1>
+          <input type="text" placeholder="0" id="display" readonly />
+          <div>
+            <button onclick="clearDisplay()" class="clear">C</button>
+            <button onclick="appendToDisplay('%')" class="operator">%</button>
+            <button onclick="appendToDisplay('/')" class="operator">/</button>
+            <button onclick="appendToDisplay('**')" class="operator">^</button>
+          </div>
+          <div>
+            <button onclick="appendToDisplay('9')">9</button>
+            <button onclick="appendToDisplay('8')">8</button>
+            <button onclick="appendToDisplay('7')">7</button>
+            <button onclick="appendToDisplay('*')" class="operator">X</button>
+          </div>
+          <div>
+            <button onclick="appendToDisplay('6')">6</button>
+            <button onclick="appendToDisplay('5')">5</button>
+            <button onclick="appendToDisplay('4')">4</button>
+            <button onclick="appendToDisplay('+')" class="operator">+</button>
+          </div>
+          <div>
+            <button onclick="appendToDisplay('3')">3</button>
+            <button onclick="appendToDisplay('2')">2</button>
+            <button onclick="appendToDisplay('1')">1</button>
+            <button onclick="appendToDisplay('-')" class="operator">-</button>
+          </div>
+          <div>
+            <button onclick="appendToDisplay('.')">.</button>
+            <button onclick="appendToDisplay('0')">0</button>
+            <button onclick="appendToDisplay('(')">(</button>
+            <button onclick="appendToDisplay(')')">)</button>
+          </div>
+          <div>
+            <button onclick="calculate()" class="hasil">=</button>
+          </div>
+        </div>
+
+        <!--Konverter Suhu-->
+        <div class="suhu-bilangan">
+          <div class="container-suhu-bilangan">
+            <h1>Konversi Suhu</h1>
+            <div class="suhu-awal">
+              <input
+                type="number"
+                id="inputTemperature"
+                placeholder="Masukkan Suhu"
+                class="input-suhu"
+              />
+
+              <select id="selectFrom" class="suhu-pertama">
+                <option value="celsius">C</option>
+                <option value="fahrenheit">F</option>
+                <option value="kelvin">K</option>
+                <option value="reamur">R</option>
+              </select>
+            </div>
+            <label for="selectTo" class="ke">Ke:</label>
+            <div class="hasil-kolom">
+              <select id="selectTo" class="suhu-pertama">
+                <option value="celsius">C</option>
+                <option value="fahrenheit">F</option>
+                <option value="kelvin">K</option>
+                <option value="reamur">R</option>
+              </select>
+              <button onclick="convertTemperature()" class="button-suhu">
+                Konversi
+              </button>
+            </div>
+
+            <p id="resultSuhu" class="hasil-suhu-bilangan">Hasil konversi :</p>
+          </div>
+
+          <!--Konverter Bilangan-->
+          <div class="container-suhu-bilangan">
+            <h1>Konverter Bilangan</h1>
+            <div class="suhu-awal">
+              <input
+                type="number"
+                id="inputBilangan"
+                placeholder="Masukkan bilangan"
+                class="input-suhu"
+              />
+              <select id="selectBilanganAwal" class="suhu-pertama">
+                <option value="binary">Biner</option>
+                <option value="decimal">Desimal</option>
+                <option value="hexadecimal">Heksadesimal</option>
+                <option value="octal">Oktal</option>
+              </select>
+            </div>
+            <label for="selectBilanganAkhir" class="ke">Ke:</label>
+            <div class="hasil-kolom">
+              <select id="selectBilanganAkhir" class="suhu-pertama">
+                <option value="binaryResult">Biner</option>
+                <option value="decimalResult">Desimal</option>
+                <option value="hexadecimalResult">Heksadesimal</option>
+                <option value="octalResult">Oktal</option>
+              </select>
+              <button onclick="convertNumberBilangan()" class="button-suhu">
+                Konversi
+              </button>
+            </div>
+
+            <p id="hasilBilangan">Hasil konversi:</p>
+          </div>
+        </div>
+        <!--Kalkulator Akar-->
+        <div class="akar">
+          <div class="suhu-bilangan">
+            <div class="container-suhu-bilangan">
+              <h1>Kalkulator Akar</h1>
+              <div class="suhu-awal">
+                <input
+                  type="number"
+                  id="inputAkar"
+                  placeholder="0"
+                  class="input-suhu"
+                />
+              </div>
+              <label for="selectTo" class="ke">Ke:</label>
+              <div class="hasil-kolom">
+                <select id="rootType" class="suhu-pertama">
+                  <option value="2"><sup>2</sup> √</option>
+                  <option value="3"><sup>3</sup> √</option>
+                  <option value="4"><sup>4</sup> √</option>
+                  <option value="5"><sup>5</sup> √</option>
+                </select>
+                <button onclick="hitungAkar()" class="button-suhu">
+                  Hitung Akar
+                </button>
+              </div>
+
+              <p id="resultAkar" class="hasil-suhu-bilangan">Hasil :</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="main.js"></script>
+    <script src="script.js"></script>
+    <script src="bilangan.js"></script>
+  </body>
+</html>
